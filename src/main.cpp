@@ -27,7 +27,7 @@ FullLoopbackStream incomingStream;
 
 #endif // INCLUDE_WIFI
 
-#define DEVICE_NAME "HelloWorldEsp" //{"Group":"General","Name":"DEVICE_NAME","Title":"Device name,\r\n make sure to use a unique name when using multiple arduinos","DefaultValue":"SimHub Dash","Type":"string","Template":"#define DEVICE_NAME \"{0}\""}
+#define DEVICE_NAME "ESP32 Wind Sim" //{"Group":"General","Name":"DEVICE_NAME","Title":"Device name,\r\n make sure to use a unique name when using multiple arduinos","DefaultValue":"SimHub Dash","Type":"string","Template":"#define DEVICE_NAME \"{0}\""}
 
 // Known working features:
 //  
