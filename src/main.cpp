@@ -754,13 +754,13 @@ SHShakeitDKMotorShield shShakeitDKMotorShield;
 #define L98NMOTORS_ENABLED 0 //{"Group":"SHAKEIT L298N Motors Board","Name":"L98NMOTORS_ENABLED","Title":"L298N motor board enabled","DefaultValue":"0","Type":"bool"}
 #ifdef INCLUDE_SHAKEITL298N
 // Motor 1
-#define L98N_enA 10          //{"Name":"L98N_enA","Title":"ENA PWM pin","DefaultValue":"10","Type":"pin;L298N ENA","Condition":"L98NMOTORS_ENABLED>=1"}
-#define L98N_in1 9           //{"Name":"L98N_in1","Title":"IN1 digital pin","DefaultValue":"9","Type":"pin;L298N IN1","Condition":"L98NMOTORS_ENABLED>=1"}
-#define L98N_in2 8           //{"Name":"L98N_in2","Title":"IN2 digital pin","DefaultValue":"8","Type":"pin;L298N IN2","Condition":"L98NMOTORS_ENABLED>=1"}
+#define L98N_enA 18          //{"Name":"L98N_enA","Title":"ENA PWM pin","DefaultValue":"10","Type":"pin;L298N ENA","Condition":"L98NMOTORS_ENABLED>=1"}
+#define L98N_in1 19           //{"Name":"L98N_in1","Title":"IN1 digital pin","DefaultValue":"9","Type":"pin;L298N IN1","Condition":"L98NMOTORS_ENABLED>=1"}
+#define L98N_in2 21           //{"Name":"L98N_in2","Title":"IN2 digital pin","DefaultValue":"8","Type":"pin;L298N IN2","Condition":"L98NMOTORS_ENABLED>=1"}
 // motor 2
-#define L98N_enB 5           //{"Name":"L98N_enB","Title":"ENB PWM pin","DefaultValue":"5","Type":"pin;L298N ENB","Condition":"L98NMOTORS_ENABLED>=1"}
-#define L98N_in3 7           //{"Name":"L98N_in3","Title":"IN3 digital pin","DefaultValue":"7","Type":"pin;L298N IN3","Condition":"L98NMOTORS_ENABLED>=1"}
-#define L98N_in4 6           //{"Name":"L98N_in4","Title":"IN4 digital pin","DefaultValue":"6","Type":"pin;L298N IN4","Condition":"L98NMOTORS_ENABLED>=1"}
+#define L98N_enB 25           //{"Name":"L98N_enB","Title":"ENB PWM pin","DefaultValue":"5","Type":"pin;L298N ENB","Condition":"L98NMOTORS_ENABLED>=1"}
+#define L98N_in3 26           //{"Name":"L98N_in3","Title":"IN3 digital pin","DefaultValue":"7","Type":"pin;L298N IN3","Condition":"L98NMOTORS_ENABLED>=1"}
+#define L98N_in4 27           //{"Name":"L98N_in4","Title":"IN4 digital pin","DefaultValue":"6","Type":"pin;L298N IN4","Condition":"L98NMOTORS_ENABLED>=1"}
 #include "SHShakeitL298N.h"
 SHShakeitL298N shShakeitL298N;
 #endif
@@ -784,7 +784,7 @@ SHShakeitL298N shShakeitL298N;
 #define SHAKEITPWM_MAX_OUTPUT_O4 255 //{"Name":"SHAKEITPWM_MAX_OUTPUT_O4","Title":"PWM Output 4 max","DefaultValue":"255","Type":"int","Condition":"SHAKEITPWM_ENABLED_MOTORS>=4","Max":255}
 
 #include "SHShakeitPWM.h"
-SHShakeitPWM shShakeitPWM;
+SHShak	eitPWM shShakeitPWM;
 #endif
 
 // -------------------- SHAKEIT PWM FANS OUTPUT ----------------------------------------------------------------
