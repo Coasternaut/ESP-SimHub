@@ -45,16 +45,19 @@ public:
 
 		digitalWrite(pinL98N_in3, LOW);
 		digitalWrite(pinL98N_in4, HIGH);
+
+		analogWriteFrequency(30000); // for Darkrock PC fans
 	}
 
 protected:
 	void setMotorOutput(uint8_t motorIdx, uint8_t value) {
+		int mappedValue = map(value, 0, 255, 163, 255);
 		if (motorIdx == 0) {
 			if (value == 0) {
 				digitalWrite(pinL98N_enA, LOW);
 			}
 			else {
-				analogWrite(pinL98N_enA, value);
+				analogWrite(pinL98N_enA, mappedValue);
 			}
 		}
 		else {
@@ -62,7 +65,7 @@ protected:
 				digitalWrite(pinL98N_enB, LOW);
 			}
 			else {
-				analogWrite(pinL98N_enB, value);
+				analogWrite(pinL98N_enB, mappedValue);
 			}
 		}
 	}
