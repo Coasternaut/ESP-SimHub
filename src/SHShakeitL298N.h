@@ -4,6 +4,8 @@
 #include <Arduino.h>
 #include "SHShakeitBase.h"
 
+const int LEDPIN = 2;
+
 class SHShakeitL298N : public SHShakeitBase {
 private:
 	byte	pinL98N_enA = 0;
@@ -36,6 +38,7 @@ public:
 		pinMode(pinL98N_in2, OUTPUT);
 		pinMode(pinL98N_in3, OUTPUT);
 		pinMode(pinL98N_in4, OUTPUT);
+		pinMode(LEDPIN, OUTPUT);
 
 		digitalWrite(pinL98N_enA, LOW);
 		digitalWrite(pinL98N_enB, LOW);
@@ -51,24 +54,24 @@ public:
 
 protected:
 	void setMotorOutput(uint8_t motorIdx, uint8_t value) {
-		int mappedValue = map(value, 0, 255, 163, 255);
+		int mappedValue = 0;
+		if (value != 0) {
+			mappedValue = int(map(value, 0, 255, 163, 255));
+		}
+
+		if (mappedValue >= 163) {
+			digitalWrite(LEDPIN, HIGH);
+		} else {
+			digitalWrite(LEDPIN, LOW);
+		}
+
 		if (motorIdx == 0) {
-			if (value == 0) {
-				digitalWrite(pinL98N_enA, LOW);
-			}
-			else {
-				analogWrite(pinL98N_enA, mappedValue);
-			}
+			analogWrite(pinL98N_enA, mappedValue);
 		}
 		else {
-			if (value == 0) {
-				digitalWrite(pinL98N_enB, LOW);
-			}
-			else {
-				analogWrite(pinL98N_enB, mappedValue);
+			analogWrite(pinL98N_enB, mappedValue);
 			}
 		}
-	}
-};
+	};
 
 #endif
